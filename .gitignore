@@ -32,3 +32,4 @@ npm-debug.log
 /ui/.sass-cache
 
 vue_form/dist
+prometheus/data

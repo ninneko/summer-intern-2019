@@ -11,4 +11,5 @@ addSbtPlugin("com.mintbeans"         % "sbt-ecr"      % "0.10.0")
 addSbtPlugin("com.github.gseitz"     % "sbt-release"  % "1.0.7")
 addSbtPlugin("io.get-coursier"       % "sbt-coursier" % "1.1.0-M7")
 addSbtPlugin("io.github.davidmweber" % "flyway-sbt"   % "5.2.0")
+addSbtPlugin("io.kamon" % "sbt-kanela-runner-play-2.7" % "2.0.2")
 classpathTypes += "maven-plugin"

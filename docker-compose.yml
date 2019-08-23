@@ -1,10 +1,22 @@
 version: '2'
 services:
+  prometheus:
+    image: prom/prometheus:v2.5.0
+    volumes:
+      - ./prometheus:/prometheus
+    command:
+      - '--config.file=/prometheus/prometheus.yml'
+    ports:
+      - 9090:9090
+    depends_on:
+      - scala
   scala:
     image: hseeberger/scala-sbt:8u181_2.12.6_1.2.1
     container_name: nb-summer-scala
     ports:
-    - 9000:9000
+      - 80:9000
+      - 9095:9095
+      - 5266:5266
     volumes:
       - .:/source
       - ./.ivy2:/root/.ivy2

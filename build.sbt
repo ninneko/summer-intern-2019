@@ -27,6 +27,9 @@ libraryDependencies ++= Seq(
   "org.asynchttpclient"   % "async-http-client"        % "2.5.3",
   "com.h2database"        % "h2"                       % "1.4.199",
   "org.flywaydb"         %% "flyway-play"              % "5.3.2",
+  "io.kamon" %% "kamon-bundle" % "2.0.1",
+  "io.kamon" %% "kamon-system-metrics" % "2.0.0",
+  "io.kamon" %% "kamon-prometheus" % "2.0.0",
   guice
 )
 
@@ -35,6 +38,7 @@ lazy val root = (project in file("."))
   .enablePlugins(FlywayPlugin)
   .enablePlugins(SbtWeb)
   .enablePlugins(PlayScala)
+  .enablePlugins(JavaAgent)
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
